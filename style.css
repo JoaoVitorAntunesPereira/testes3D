@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --font-color: rgb(32, 32, 32);
+    --sidebar-color: #414141;
+    --font-family: 'Red Hat Display', sans-serif;
+}
+
+body{
+    background-image: linear-gradient(90deg, #1d861d, #41ad41);
+    height: 100vh;
+}
+
+div.sidebar{
+    height: 700px;
+    width: 130px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 0 10px 10px 0;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+div.items{
+    margin: 20px auto;
+}
+
+div.items p{
+    font-family: var(--font-family);
+    font-size: 1.1em;
+    color: var(--font-color);
+    height: 70px;
+    width: 93%;
+    display: flex;
+    align-items: center;
+    color: var(--font-color);
+    padding: 5px;
+}
+
+div.items p:hover{
+    animation: fontBackgroundColorChange .2s linear forwards;
+}
+
+@keyframes fontBackgroundColorChange {
+    to{
+        background: rgba( 255, 255, 255, 0.45 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 7.5px );
+        -webkit-backdrop-filter: blur( 7.5px );
+    }
+}
+
+div.logo{
+    width: 100%;
+}
+
+div.logo img{
+    width: 100%;
+    clip-path: circle(50% at 50% 50%);
+}
+
+iframe{
+    width: 90vw;
+    height: 80vh;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    overflow-y: hidden;
+}
