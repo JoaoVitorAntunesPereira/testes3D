@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: gray;
+}
+
+.pyramid-body{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(30deg);
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotateX(0deg) rotateY(30deg);
+    }
+    100%{
+        transform: rotateX(0deg) rotateY(390deg);
+    }
+}
+
+.pyramid{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.pyramid-in{
+    width: 90%;
+    height: 90%;
+    background-color: transparent;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    transform: rotateY(calc(118deg*var(--i))) translateZ(87px) rotateX();
+    position: relative;
+    background-color: aqua;
+}
+
+.pyramid-side{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ffdf2b;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    transform: rotateY(calc(120deg*var(--i))) translateZ(87px)
+                rotateX(17deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .pyramid-side:nth-child(3){
+    background-color:  #deb918;
+    animation: sideeven 5s 2s infinite;
+}
+
+.pyramid-side:nth-child(2){
+    background-color: #ffdf2b;
+    animation: sideodd 5s 2s infinite;
+} */
+

@@ -1,0 +1,94 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: rgb(59, 59, 59);
+    height: 100vh;
+}
+.container{
+    width: 30vw;
+    height: 60vh;
+    display: flex;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+}
+
+.box{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 100px;
+    left: 100px;
+   transform-style: preserve-3d;
+   animation: cubeRotate 5s  ease-in-out  infinite;
+}
+
+@keyframes cubeRotate{
+    0%{
+        transform: rotateX(45deg) rotateY(-45deg);
+    }
+    25%{
+        transform: rotateX(-45deg) rotateY(-45deg);
+    }
+    50%{
+        transform: rotateX(45deg) rotateY(45deg);
+    }
+    75%{
+        transform: rotateX(-45deg) rotateY(45deg);
+    }
+    100%{
+        transform: rotateX(45deg) rotateY(-45deg);
+    }
+}
+
+@keyframes cubeTranslate{
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+.card{
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    padding-top: 100px;
+    color: aliceblue;
+    border: 5px solid blanchedalmond;
+    font-size: 32px;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.front{
+    transform: translateZ(125px);
+}
+
+.bottom{
+    top: 125px;
+    transform: rotateX(-90deg);
+}
+
+.back{ 
+    transform: translateZ(-125px);
+}
+
+.left{
+    right: 125px;
+    transform: rotateY(-90deg);
+}
+
+.right{
+    left: 125px;
+    transform: rotateY(90deg);
+}
+
+.top{
+    bottom: 125px;
+    transform: rotateX(90deg);
+}
