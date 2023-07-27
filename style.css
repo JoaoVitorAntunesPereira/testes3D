@@ -1,79 +1,100 @@
+header{
+    position: fixed;    
+    top: 0;
+    z-index: 1;
+}
 *{
     margin: 0;
-    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 :root{
-    --font-color: rgb(32, 32, 32);
-    --sidebar-color: #414141;
-    --font-family: 'Red Hat Display', sans-serif;
+    --amarelo:#f2c052;
 }
-
-body{
-    background-image: linear-gradient(90deg, #1d861d, #41ad41);
-    height: 100vh;
-}
-
-div.sidebar{
-    height: 700px;
-    width: 130px;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 0 10px 10px 0;
-    background: rgba( 255, 255, 255, 0.35 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-}
-
-div.items{
-    margin: 20px auto;
-}
-
-div.items p{
-    font-family: var(--font-family);
-    font-size: 1.1em;
-    color: var(--font-color);
-    height: 70px;
-    width: 93%;
+nav#header{
+    height: 60px;
     display: flex;
-    align-items: center;
-    color: var(--font-color);
-    padding: 5px;
-}
-
-div.items p:hover{
-    animation: fontBackgroundColorChange .2s linear forwards;
-}
-
-@keyframes fontBackgroundColorChange {
-    to{
-        background: rgba( 255, 255, 255, 0.45 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 7.5px );
-        -webkit-backdrop-filter: blur( 7.5px );
-    }
-}
-
-div.logo{
     width: 100%;
+    background-color: #2e3131;
+   /*  background-color: #04615B; */
+   /*  background-color: #547a80; */
+   /*  background-color: #bbcfdb; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   /*  background: rgba( 46, 49, 49, 0.7 );
+    backdrop-filter: blur( 12.5px );
+    -webkit-backdrop-filter: blur( 12.5px ); */
 }
-
-div.logo img{
-    width: 100%;
-    clip-path: circle(50% at 50% 50%);
+a{
+    text-decoration: none;
+    color: white;
 }
-
-iframe{
-    width: 90vw;
-    height: 80vh;
+div#logo{
+    width: 10vw;
+    height: 60px;
+}
+nav#header div#logo img{
     position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    overflow-y: hidden;
+    left: 5vw;
+    height: 100%;
 }
+nav#header div#links{
+    width: 90vw;
+    display: flex;
+    font-size: 1.3em;
+    align-items: center;
+    justify-content: right;
+}
+nav#header div#links > div{
+    text-align: center;
+    width: 10vw;
+    margin: 10px;
+    padding: 20px;
+}
+nav#header div#listadeservicos{
+    display: none;
+    position: absolute;
+    background-color: #3c4444;
+    width: max(10vw, 90px);
+    top: 50px;
+    box-shadow: #00000050 5px 5px 20px;
+}
+nav#header div#servicoslista a{
+    width: 100%;
+    height: 40px;
+}
+nav#header div#listadeservicos:hover{
+    display: grid;
+    grid-template-rows: 5(1fr);
+}
+nav#header div#servicoslista:hover #listadeservicos{
+    display: grid;
+    grid-template-rows: 5(1fr);
+}
+nav#header div#listadeservicos a:hover {
+    background-color: #3e4e4e;
+    color: var(--amarelo);
+}
+
+
+a.nav-items{
+    position: relative;
+}
+
+a.nav-items:hover{
+    color: var(--amarelo);
+}
+
+a.nav-items::before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 2px;
+    width: 0;
+    background: var(--amarelo);
+    transition: width 0.3s ease;
+}
+
+a.nav-items:hover::before{
+    width: 100%;
+    color: var(--amarelo);
+}
+
